@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Microsoft 365 Security — RedFlag.tech</title>
+  <meta name="description" content="Microsoft 365 Security dla firm SMB: MFA, Conditional Access, hardening kont adminów, ochrona logowań, audit trail i konkretne wdrożenie bez chaosu." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Microsoft 365 Security — RedFlag.tech" />
+  <meta property="og:description" content="Baseline, MFA, Conditional Access, hardening, audit trail. Security-first dla Microsoft 365." />
+  <meta property="og:type" content="website" />
+
+<link rel="icon" href="./fav.ico">
+<link rel="stylesheet" href="./styles.css" />
+
+</head>
+
+<body>
+<!-- NAV -->
+<header class="nav" role="banner">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a class="brand" href="./">
+        <div class="rf-logo-wrap" aria-hidden="true">
+          <img class="rf-logo" src="./logo.png" alt="RedFlag.tech logo">
+        </div>
+        <div class="brand-title">
+          <strong>RedFlag.tech</strong>
+          <span>Microsoft 365 Security dla firm</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Nawigacja główna">
+        <a class="active" href="./security.html">Security</a>
+        <a href="./tozsamosc.html">Tożsamość</a>
+        <a href="./urzadzenia.html">Urządzenia</a>
+        <a href="./backup.html">Backup</a>
+        <a href="./audyty.html">Audyt</a>
+        <a href="./pakiety.html">Pakiety</a>
+        <a href="./blog/">Blog</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn" href="./audyty.html">Audyt</a>
+        <a class="btn primary" href="#kontakt">Umów 15 min</a>
+
+        <button class="menu-btn"
+                id="menuBtn"
+                aria-label="Otwórz menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+</header>
+
+<!-- MOBILE MENU -->
+<div class="overlay" id="overlay" hidden></div>
+
+<aside class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" hidden>
+  <div class="mm-title">
+    <div class="mini">
+      <span class="dot"></span>
+      <span>Menu • RedFlag.tech</span>
+    </div>
+    <button class="mm-close" id="menuClose">✕</button>
+  </div>
+
+  <div class="mm-inner">
+    <a class="mm-link" href="./security.html"><span>Security</span>→</a>
+    <a class="mm-link" href="./tozsamosc.html"><span>Tożsamość</span>→</a>
+    <a class="mm-link" href="./urzadzenia.html"><span>Urządzenia</span>→</a>
+    <a class="mm-link" href="./backup.html"><span>Backup</span>→</a>
+    <a class="mm-link" href="./audyty.html"><span>Audyt</span>→</a>
+    <a class="mm-link" href="./pakiety.html"><span>Pakiety</span>→</a>
+
+    <div class="mm-cta">
+      <a class="btn primary" href="#kontakt">Umów 15 min</a>
+    </div>
+  </div>
+</aside>
+
+  <!-- Overlay + Mobile Menu -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu mobilne" hidden>
+    <div class="mm-title">
+      <div class="mini">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Menu • RedFlag.tech</span>
+      </div>
+      <button class="mm-close" id="menuClose" aria-label="Zamknij menu">✕</button>
+    </div>
+
+    <div class="mm-inner">
+      ./security.html
+        <div><b>Microsoft 365 Security</b><span>Baseline, MFA, CA, hardening</span></div>
+        <span>→</span>
+      </a>
+      ./tozsamosc.html
+        <div><b>Tożsamość (Entra ID)</b><span>Role, dostęp, konta uprzywilejowane</span></div>
+        <span>→</span>
+      </a>
+      ./urzadzenia.html
+        <div><b>Urządzenia (Intune)</b><span>Compliance, standardy, kontrola</span></div>
+        <span>→</span>
+      </a>
+      ./poczta.html
+        <div><b>Poczta (Exchange)</b><span>Antyphishing, DKIM/DMARC</span></div>
+        <span>→</span>
+      </a>
+      ./backup.html
+        <div><b>Backup Microsoft 365</b><span>Kopie + testy odtworzeń</span></div>
+        <span>→</span>
+      </a>
+      ./copilot.html
+        <div><b>Copilot / AI readiness</b><span>Uprawnienia, dane, governance</span></div>
+        <span>→</span>
+      </a>
+      ./migracje.html
+        <div><b>Migracje i porządkowanie</b><span>Tenant, poczta, urządzenia</span></div>
+        <span>→</span>
+      </a>
+      ./audyty.html
+        <div><b>Audyt i raport</b><span>Ryzyka + plan działań</span></div>
+        <span>→</span>
+      </a>
+      ./pakiety.html
+        <div><b>Pakiety dla SMB</b><span>Start / Secure / Resilient</span></div>
+        <span>→</span>
+      </a>
+      ./blog/
+        <div><b>Blog: Security Notes</b><span>Krótkie notatki, bez lania wody</span></div>
+        <span>→</span>
+      </a>
+
+      <div class="mm-cta">
+        #kontaktUmów 15 minut</a>
+        #zakresZobacz zakres</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="pill"><span class="dot" aria-hidden="true"></span> Microsoft 365 Security</div>
+        <h1>Security dla Microsoft 365, które działa w praktyce.</h1>
+
+        <p class="lead">
+          W SMB najczęściej nie brakuje „funkcji” w licencji — brakuje <b>zasad</b>, <b>priorytetów</b> i
+          <b>konsekwencji</b>. My robimy konkretny baseline i wdrożenie: MFA, Conditional Access, hardening kont adminów,
+          kontrolę logowań oraz audit trail. Bez chaosu dla użytkowników.
+        </p>
+
+        <div class="hero-cta">
+          #kontaktUmów 15 minut</a>
+          #zakresZobacz co wdrażamy</a>
+          ./audyty.htmlNajpierw audyt</a>
+        </div>
+
+        <div class="breadcrumbs">
+          ./Strona główna</a>  <span aria-hidden="true">›</span>  <span>Security</span>
+        </div>
+
+        <div class="badge-row" aria-label="Obszary">
+          <span class="badge">MFA + metody</span>
+          <span class="badge">Conditional Access</span>
+          <span class="badge">Admin hardening</span>
+          <span class="badge">Blokady ryzykownych logowań</span>
+          <span class="badge">Ochrona sesji / zasady</span>
+          <span class="badge">Audit trail</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="section" id="zakres">
+      <div class="container">
+        <h2>Co dostajesz (efekt biznesowy)</h2>
+        <p class="sub">
+          Bezpieczeństwo musi być mierzalne i „do pokazania” zarządowi/audytorowi. Dlatego kończymy pracę
+          nie tylko ustawieniami, ale też dokumentacją i checklistą utrzymaniową.
+        </p>
+
+        <div class="grid three">
+          <div class="card">
+            <strong>Mniej przejęć kont</strong>
+            <p>Logowania są ograniczone zasadami (kto, skąd, na czym i w jakich warunkach). Znika „dowolność”.</p>
+          </div>
+          <div class="card">
+            <strong>Mniej incydentów phishing</strong>
+            <p>Zasady dla ról i kont uprzywilejowanych + blokady scenariuszy, które najczęściej prowadzą do włamań.</p>
+          </div>
+          <div class="card">
+            <strong>Audit‑ready</strong>
+            <p>Raport: co było, co zmieniliśmy, jakie są ryzyka i co dalej. Bez „wiedzy w głowie admina”.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPLEMENTATION SCOPE -->
+    <section class="section">
+      <div class="container">
+        <h2>Co wdrażamy (konkretnie)</h2>
+        <p class="sub">
+          Zakres dobieramy do Twojej sytuacji i licencji, ale trzymamy ten sam fundament: tożsamość, zasady dostępu,
+          higiena adminów i logika wyjątków.
+        </p>
+
+        <div class="grid two">
+          <div class="card">
+            <strong>1) MFA i metody uwierzytelniania</strong>
+            <ul class="clean">
+              <li><span class="tick"></span> Wymuszenie rejestracji metod MFA i „porządek” w metodach</li>
+              <li><span class="tick"></span> Zasady dla adminów (większy rygor niż dla użytkowników)</li>
+              <li><span class="tick"></span> Ograniczenie wyjątków i przegląd „kto omija zasady”</li>
+              <li><span class="tick"></span> Zasady „Keep me signed in” / sesje — wg scenariusza</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <strong>2) Conditional Access (scenariusze)</strong>
+            <ul class="clean">
+              <li><span class="tick"></span> Oddzielenie adminów i kont uprzywilejowanych</li>
+              <li><span class="tick"></span> Wymuszenie zgodnego urządzenia (tam gdzie to ma sens)</li>
+              <li><span class="tick"></span> Blokady ryzykownych logowań i ograniczenia lokalizacji</li>
+              <li><span class="tick"></span> Polityki dla aplikacji / dostępu do M365 (bez „jednej reguły na wszystko”)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <strong>3) Hardening administracji</strong>
+            <ul class="clean">
+              <li><span class="tick"></span> Minimalizacja uprawnień (role, zamiast „wszyscy adminami”)</li>
+              <li><span class="tick"></span> Konta awaryjne (break‑glass) + zasady bezpieczeństwa</li>
+              <li><span class="tick"></span> Przegląd aplikacji i zgód (consent) / redukcja ryzyka</li>
+              <li><span class="tick"></span> Zasady zmian i odpowiedzialności (kto/co/kiedy)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <strong>4) Monitoring i ślad zmian</strong>
+            <ul class="clean">
+              <li><span class="tick"></span> Ustalenie alertów i podstawowego monitoringu</li>
+              <li><span class="tick"></span> Raport wdrożenia + lista rekomendacji „co dalej”</li>
+              <li><span class="tick"></span> Checklisty utrzymaniowe (miesiąc/kwartał)</li>
+              <li><span class="tick"></span> Szybka procedura na incydent (co robić w pierwszej godzinie)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:14px;">
+          <b>Ważne:</b> nie robimy „security theatre”. Jeśli coś nie ma sensu w Twoim modelu pracy — nie wciskamy.
+          Budujemy zasady, które da się utrzymać i które realnie zmniejszają ryzyko.
+        </div>
+      </div>
+    </section>
+
+    <!-- DELIVERABLES -->
+    <section class="section">
+      <div class="container">
+        <h2>Co dostajesz na końcu (artefakty)</h2>
+        <p class="sub">
+          Każde wdrożenie kończy się zestawem materiałów, żebyś nie wrócił po miesiącu do punktu wyjścia.
+        </p>
+
+        <div class="grid three">
+          <div class="card">
+            <strong>Raport „as‑is / to‑be”</strong>
+            <p>Stan przed, stan po, ryzyka, priorytety. Format do pokazania zarządowi lub audytorowi.</p>
+          </div>
+          <div class="card">
+            <strong>Lista polityk i wyjątków</strong>
+            <p>Co jest włączone, gdzie są wyjątki i dlaczego. Żeby nie zgadywać przy następnym problemie.</p>
+          </div>
+          <div class="card">
+            <strong>Checklisty utrzymania</strong>
+            <p>Co sprawdzać co miesiąc/kwartał (np. admini, logowania, zgody aplikacji, wyjątki).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <h2>FAQ (krótko i konkretnie)</h2>
+        <p class="sub">Najczęstsze pytania przed wdrożeniem zabezpieczeń w Microsoft 365.</p>
+
+        <div class="grid two">
+          <details>
+            <summary>Czy to wywróci pracę użytkowników?</summary>
+            <p>
+              Nie, jeśli robimy to etapami: najpierw baseline i porządek w metodach MFA, później CA w scenariuszach.
+              Zawsze planujemy komunikację i okno wdrożenia.
+            </p>
+          </details>
+
+          <details>
+            <summary>Czy potrzebuję „najwyższych” licencji?</summary>
+            <p>
+              Nie zawsze. Dobieramy zakres do posiadanych licencji i priorytetów ryzyka. Często najwięcej daje poprawna
+              konfiguracja i porządek, nie „kolejny produkt”.
+            </p>
+          </details>
+
+          <details>
+            <summary>Co z urządzeniami i Intune?</summary>
+            <p>
+              Security w M365 jest najmocniejsze, gdy część zasad opiera się o stan urządzenia (zgodność). Jeśli nie masz
+              Intune, zaczynamy od tożsamości, a „device” dokładamy jako kolejny etap.
+            </p>
+          </details>
+
+          <details>
+            <summary>Ile to trwa?</summary>
+            <p>
+              Baseline da się zrobić szybko, a pełne CA i hardening zależy od złożoności firmy. Zawsze dostajesz plan z
+              kolejnością, priorytetami i wpływem na użytkowników.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  <section class="section" id="kontakt">
+  <div class="container">
+    <div class="cta-panel">
+      <h2>Umów 15 minut</h2>
+      <p>
+        Napisz: liczba użytkowników + co boli (phishing / logowania / urządzenia / backup).
+        Odpowiem z proponowaną ścieżką.
+      </p>
+
+      <div class="cta-actions">
+        <a class="btn primary"
+           href="mailto:kontakt@redflag.tech?subject=Rozmowa%2015%20min%20-%20RedFlag.tech&body=Hej%2C%0A%0ALiczba%20u%C5%BCytkownik%C3%B3w%3A%20%0ACo%20boli%3A%20(phishing%2Flogowania%2Furz%C4%85dzenia%2Fbackup)%0AObecne%20licencje%3A%20(je%C5%9Bli%20wiesz)%0A%0AProsz%C4%99%20o%20termin%20na%2015%20min.%0A">
+          Napisz mail
+        </a>
+
+        <a class="btn" href="./audyty.html">Audyt i raport</a>
+        <a class="btn" href="./pakiety.html">Pakiety</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> ./redflag.tech</a> • Microsoft 365 Security</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          ./pakiety.htmlPakiety</a>
+          ./audyty.htmlAudyt</a>
+          ./blog/Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu (a11y + UX)
+    const menuBtn   = document.getElementById('menuBtn');
+    const overlay   = document.getElementById('overlay');
+    const menu      = document.getElementById('mobileMenu');
+    const menuClose = document.getElementById('menuClose');
+
+    let lastFocus = null;
+
+    function openMenu(){
+      lastFocus = document.activeElement;
+
+      menu.hidden = false;
+      overlay.hidden = false;
+
+      requestAnimationFrame(() => {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const firstLink = menu.querySelector('a');
+      if(firstLink) setTimeout(() => firstLink.focus(), 50);
+    }
+
+    function closeMenu(){
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+
+      setTimeout(() => {
+        menu.hidden = true;
+        overlay.hidden = true;
+        if(lastFocus) lastFocus.focus();
+      }, 260);
+    }
+
+    function toggleMenu(){
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      expanded ? closeMenu() : openMenu();
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close on ESC
+    window.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true'){
+        closeMenu();
+      }
+    });
+
+    // Close after clicking a link (mobile)
+    menu.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if(a) closeMenu();
+    });
+  </script>
+
+<script src="./app.js"></script>
+
+
+<!-- STICKY CTA (mobile) -->
+<div class="sticky-cta" aria-label="Szybkie akcje">
+  <div class="inner">
+
+    <a class="btn primary"
+       href="mailto:kontakt@redflag.tech?subject=Audyt Microsoft 365 – 15 min&body=Liczba użytkowników:%0AProblem:%20(phishing/logowania/urządzenia/backup)%0AObecne licencje:%0A%0AChcę umówić 15 min">
+      Napisz mail
+    </a>
+
+    <a class="btn" href="./audyty.html">Audyt</a>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>

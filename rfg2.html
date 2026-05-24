@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>RedFlag.tech — Microsoft 365 Security dla firm</title>
+  <meta name="description" content="RedFlag.tech: Security-first dla Microsoft 365. Entra ID, Conditional Access, Intune, ochrona poczty i backup M365. Konkretnie, audit‑ready." />
+
+  <meta property="og:title" content="RedFlag.tech — Microsoft 365 Security dla firm" />
+  <meta property="og:description" content="Entra ID • Conditional Access • Intune • Exchange • Backup. Bezpieczeństwo M365 w praktyce, audit‑ready." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="./fav.ico" />
+  <link rel="stylesheet" href="./styles.css" />
+
+</head>
+
+<body>
+  <!-- NAV -->
+<header class="nav" role="banner">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a class="brand" href="./">
+        <div class="rf-logo-wrap" aria-hidden="true">
+          <img class="rf-logo" src="./logo.png" alt="RedFlag.tech logo">
+        </div>
+        <div class="brand-title">
+          <strong>RedFlag.tech</strong>
+          <span>Microsoft 365 Security dla firm</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Nawigacja główna">
+        <a href="./security.html">Security</a>
+        <a href="./tozsamosc.html">Tożsamość</a>
+        <a href="./urzadzenia.html">Urządzenia</a>
+        <a href="./backup.html">Backup</a>
+        <a href="./audyty.html">Audyt</a>
+        <a href="./pakiety.html">Pakiety</a>
+        <a href="./blog/">Blog</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn" href="./audyty.html">Audyt</a>
+        <a class="btn primary" href="#kontakt">Umów 15 min</a>
+
+        <button class="menu-btn"
+                id="menuBtn"
+                aria-label="Otwórz menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="overlay" id="overlay" hidden></div>
+
+<aside class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" hidden>
+  <div class="mm-title">
+    <div class="mini">
+      <span class="dot"></span>
+      <span>Menu • RedFlag.tech</span>
+    </div>
+    <button class="mm-close" id="menuClose">✕</button>
+  </div>
+
+  <div class="mm-inner">
+    <a class="mm-link" href="./security.html"><span>Security</span>→</a>
+    <a class="mm-link" href="./tozsamosc.html"><span>Tożsamość</span>→</a>
+    <a class="mm-link" href="./urzadzenia.html"><span>Urządzenia</span>→</a>
+    <a class="mm-link" href="./backup.html"><span>Backup</span>→</a>
+    <a class="mm-link" href="./audyty.html"><span>Audyt</span>→</a>
+    <a class="mm-link" href="./pakiety.html"><span>Pakiety</span>→</a>
+
+    <div class="mm-cta">
+      <a class="btn primary" href="#kontakt">Umów 15 min</a>
+    </div>
+  </div>
+</aside>
+
+  <!-- Overlay + Mobile Menu -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu mobilne" hidden>
+    <div class="mm-title">
+      <div class="mini">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Menu • RedFlag.tech</span>
+      </div>
+      <button class="mm-close" id="menuClose" aria-label="Zamknij menu">✕</button>
+    </div>
+
+    <div class="mm-inner">
+      <a class="mm-link" href="./security.html">
+        <div><b>Microsoft 365 Security</b><span>Baseline, MFA, CA, hardening</span></div><span>→</span>
+      </a>
+      <a class="mm-link" href="./tozsamosc.html">
+        <div><b>Tożsamość (Entra ID)</b><span>Role, dostęp, admini</span></div><span>→</span>
+      </a>
+      <a class="mm-link" href="./urzadzenia.html">
+        <div><b>Urządzenia (Intune)</b><span>Compliance, standardy</span></div><span>→</span>
+      </a>
+      <a class="mm-link" href="./backup.html">
+        <div><b>Backup Microsoft 365</b><span>Kopie + testy odtworzeń</span></div><span>→</span>
+      </a>
+      <a class="mm-link" href="./audyty.html">
+        <div><b>Audyt i raport</b><span>Ryzyka + plan działań</span></div><span>→</span>
+      </a>
+      <a class="mm-link" href="./pakiety.html">
+        <div><b>Pakiety dla SMB</b><span>Start / Secure / Resilient</span></div><span>→</span>
+      </a>
+
+      <div class="mm-cta">
+        <a class="btn primary" href="#kontakt">Umów 15 min</a>
+        <a class="btn" href="./security.html">Zobacz Security</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="pill"><span class="dot" aria-hidden="true"></span> Security-first • 2026 • SMB</div>
+            <h1>Microsoft 365 bez ryzyka<br/>Zasady, które działają.</h1>
+            <p class="lead">
+              Wdrażamy i porządkujemy bezpieczeństwo Microsoft 365: <b>MFA</b>, <b>Conditional Access</b>, higiena adminów,
+              kontrola dostępu oraz fundament pod urządzenia i backup. Bez marketingu — konkretnie i audit‑ready.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn primary" href="#kontakt">Umów 15 min</a>
+              <a class="btn" href="./security.html">Zobacz zakres Security</a>
+              <a class="btn" href="./audyty.html">Audyt i raport</a>
+            </div>
+          </div>
+
+          <div class="card quick">
+            <strong>W skrócie</strong>
+            <p>Największy efekt w SMB daje porządek w tożsamości i zasadach dostępu — dopiero potem „dodatkowe narzędzia”.</p>
+
+            <div class="stat" aria-label="Najczęstsze obszary">
+              <div class="stat-row"><span>Tożsamość i dostęp</span><b>Entra ID + CA</b></div>
+              <div class="stat-row"><span>Kontrola urządzeń</span><b>Intune baseline</b></div>
+              <div class="stat-row"><span>Ciągłość działania</span><b>Backup + testy</b></div>
+            </div>
+
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn" href="./pakiety.html">Pakiety</a>
+              <a class="btn" href="./backup.html">Backup</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 PILLARS -->
+    <section class="section">
+      <div class="container">
+        <h2>Trzy filary bezpieczeństwa M365</h2>
+        <p class="sub">
+          Nie komplikujemy. Skupiamy się na tym, co realnie obniża ryzyko: tożsamość/dostęp, urządzenia i odtwarzanie.
+        </p>
+
+        <div class="grid three">
+          <a class="card" href="./tozsamosc.html">
+            <div class="kpi">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.9 9 12 5.2-1.1 9-6.4 9-12V5l-9-4Zm0 20c-4-1.1-7-5.7-7-10.2V6.3L12 3l7 3.3v4.5C19 15.3 16 19.9 12 21Z"/></svg>
+              </div>
+              <div>
+                <strong>Tożsamość (Entra ID)</strong>
+                <p>MFA, Conditional Access, role, konta uprzywilejowane, kontrola logowań.</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="card" href="./urzadzenia.html">
+            <div class="kpi">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H13l1.3 2H9.7L11 18H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v9h16V7H4Z"/></svg>
+              </div>
+              <div>
+                <strong>Urządzenia (Intune)</strong>
+                <p>Baseline, compliance, szyfrowanie, aktualizacje i dostęp warunkowy oparty o stan urządzenia.</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="card" href="./backup.html">
+            <div class="kpi">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 6a6 6 0 1 1-5.3 3.2l-1.8-.9A8 8 0 1 0 12 4V1l4 3-4 3V6Z"/></svg>
+              </div>
+              <div>
+                <strong>Backup i odtwarzanie</strong>
+                <p>Kopie + testy restore + procedury. Backup to proces, nie checkbox.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+<!-- O REDFLAG (firma-style) -->
+<section class="section" id="firma">
+  <div class="container">
+    <div class="rf-brand">
+
+      <div class="rf-head">
+        <div class="rf-lockup">
+          <div class="rf-logo-wrap" aria-hidden="true">
+            <img class="rf-logo" src="./logo.png" alt="RedFlag.tech logo">
+          </div>
+
+          <div class="rf-title">
+            <strong>RedFlag.tech</strong>
+            <span>Security-first dla Microsoft 365 — wdrożenia, porządkowanie i utrzymanie dla firm SMB.</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn" href="./security.html">Zobacz Security</a>
+          <a class="btn primary" href="#kontakt">Umów 15 min</a>
+        </div>
+      </div>
+
+      <div class="rf-claim">
+        Budujemy zasady bezpieczeństwa, które realnie zmniejszają ryzyko — i da się je utrzymać.
+      </div>
+
+      <div class="rf-sub">
+        Skupiamy się na fundamentach: tożsamość i dostęp (Entra/CA), higiena administracji, kontrola urządzeń (Intune) oraz
+        ciągłość działania (backup + testy odtworzeń). Zostawiamy dokumentację i ślad zmian — audit‑ready.
+      </div>
+
+      <div class="rf-badges" aria-label="Trust badges">
+        <span class="rf-badge hot">Microsoft 365 Security</span>
+        <span class="rf-badge">Entra ID</span>
+        <span class="rf-badge">Conditional Access</span>
+        <span class="rf-badge">Intune</span>
+        <span class="rf-badge">Exchange / antyphishing</span>
+        <span class="rf-badge">Backup M365</span>
+        <span class="rf-badge">Raport + audit trail</span>
+      </div>
+
+      <div class="rf-mini">
+        <div class="card">
+          <strong>Jak pracujemy</strong>
+          <p>Diagnoza → priorytety → wdrożenie etapami. Bez „big-bang”. Zawsze z komunikacją i planem.</p>
+        </div>
+
+        <div class="card">
+          <strong>Co dostajesz</strong>
+          <p>Raport „as‑is/to‑be”, lista polityk i wyjątków, checklisty utrzymaniowe oraz rekomendacje na kolejne kroki.</p>
+        </div>
+
+        <div class="card">
+          <strong>Dla kogo</strong>
+          <p>Firmy, które boją się phishingu i przejęć kont, chcą porządku w M365 oraz realnej odporności (backup + testy).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- RED FLAGS (short) -->
+    <section class="section">
+      <div class="container">
+        <div class="flags">
+          <h2 style="margin:0 0 8px;">Najczęstsze „red flags”</h2>
+          <p class="sub" style="margin:0 0 10px;">
+            Jeśli masz 2–3 punkty — zwykle da się szybko poprawić bezpieczeństwo bez paraliżu użytkowników.
+          </p>
+
+          <div class="flag">
+            <div class="x" aria-hidden="true">!</div>
+            <div><b>MFA bez zasad</b><small>Wyjątki, brak rygoru dla adminów, brak kontroli sesji i logowań.</small></div>
+          </div>
+          <div class="flag">
+            <div class="x" aria-hidden="true">!</div>
+            <div><b>Brak Conditional Access</b><small>Logowania z dowolnego miejsca i urządzenia — brak „bramek bezpieczeństwa”.</small></div>
+          </div>
+          <div class="flag">
+            <div class="x" aria-hidden="true">!</div>
+            <div><b>Urządzenia poza kontrolą</b><small>Brak standardu, zgodności i szyfrowania → ryzyko rośnie.</small></div>
+          </div>
+          <div class="flag">
+            <div class="x" aria-hidden="true">!</div>
+            <div><b>Backup bez testów</b><small>Backup bez prób odtworzeń to ryzyko „na papierze”.</small></div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn primary" href="./audyty.html">Zrób audyt i plan</a>
+            <a class="btn" href="./security.html">Co dokładnie wdrażamy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW (short) -->
+    <section class="section">
+      <div class="container">
+        <h2>Jak działamy (krótko)</h2>
+        <p class="sub">Proces jest powtarzalny i przewidywalny. Mniej „magii”, więcej kontroli i dokumentacji.</p>
+
+        <div class="grid two steps">
+          <div class="card">
+            <div class="row">
+              <div class="num">1</div>
+              <div><strong>Diagnoza i priorytety</strong><p>Stan ustawień + ryzyka + kolejność działań (bez zgadywania).</p></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="row">
+              <div class="num">2</div>
+              <div><strong>Wdrożenie etapami</strong><p>MFA/CA/hardening, potem urządzenia i backup — kontrolowanie.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <div class="row">
+            <div class="num">3</div>
+            <div><strong>Artefakty i utrzymanie</strong><p>Raport, lista polityk i wyjątków, checklisty. Security to proces.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="card" style="border-color: rgba(225,29,72,.25); background: rgba(225,29,72,.06);">
+          <h2 style="margin:0 0 8px;">Umów 15 minut</h2>
+          <p class="sub" style="margin:0 0 12px;">
+            Napisz: liczba użytkowników + co boli (phishing / logowania / urządzenia / backup). Odpowiem z proponowaną ścieżką.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a class="btn primary" href="mailto:kontakt@redflag.tech?subject=RedFlag.tech%20%E2%80%94%2015%20min&body=Hej%2C%0A%0ALiczba%20u%C5%BCytkownik%C3%B3w%3A%20%0ANajwi%C4%99kszy%20problem%3A%20(phishing%2Flogowania%2Furz%C4%85dzenia%2Fbackup)%0AObecne%20licencje%3A%20(je%C5%9Bli%20wiesz)%0A%0AChc%C4%99%20um%C3%B3wi%C4%87%2015%20min.">
+              Napisz mail
+            </a>
+            <a class="btn" href="./audyty.html">Audyt i raport</a>
+            <a class="btn" href="./pakiety.html">Pakiety</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> <a href="./" style="text-decoration:none;">redflag.tech</a> • Microsoft 365 Security</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="./security.html">Security</a>
+          <a href="./audyty.html">Audyt</a>
+          <a href="./pakiety.html">Pakiety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu (a11y + UX)
+    const menuBtn   = document.getElementById('menuBtn');
+    const overlay   = document.getElementById('overlay');
+    const menu      = document.getElementById('mobileMenu');
+    const menuClose = document.getElementById('menuClose');
+
+    let lastFocus = null;
+
+    function openMenu(){
+      lastFocus = document.activeElement;
+      menu.hidden = false;
+      overlay.hidden = false;
+
+      requestAnimationFrame(() => {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      });
+
+      const firstLink = menu.querySelector('a');
+      if(firstLink) setTimeout(() => firstLink.focus(), 50);
+    }
+
+    function closeMenu(){
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+
+      setTimeout(() => {
+        menu.hidden = true;
+        overlay.hidden = true;
+        if(lastFocus) lastFocus.focus();
+      }, 260);
+    }
+
+    function toggleMenu(){
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      expanded ? closeMenu() : openMenu();
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    window.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true'){
+        closeMenu();
+      }
+    });
+
+    menu.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if(a) closeMenu();
+    });
+  </script>
+
+<script src="./app.js"></script>
+
+<!-- STICKY CTA (mobile) -->
+<div class="sticky-cta" aria-label="Szybkie akcje">
+  <div class="inner">
+
+    <a class="btn primary"
+       href="mailto:kontakt@redflag.tech?subject=Audyt Microsoft 365 – 15 min&body=Liczba użytkowników:%0AProblem:%20(phishing/logowania/urządzenia/backup)%0AObecne licencje:%0A%0AChcę umówić 15 min">
+      Napisz mail
+    </a>
+
+    <a class="btn" href="./audyty.html">Audyt</a>
+
+  </div>
+</div>
+
+
+</body>
+</html>
