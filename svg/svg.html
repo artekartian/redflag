@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RedFlag – Microsoft 365 Security</title>
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto;
+  background:#050816;
+  color:#e5eefc;
+}
+
+/* HERO */
+.hero{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* LEFT */
+.hero h1{
+  font-size:56px;
+  margin:0 0 20px;
+}
+
+.hero p{
+  color:#94a3b8;
+  line-height:1.6;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 22px;
+  background:#22d3ee;
+  color:#000;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+}
+
+/* RIGHT PANEL */
+.panel{
+  background:#0b1324;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;
+  padding:20px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+/* CARD */
+
+.card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;   /* kluczowa zmiana */
+  text-align:left;          /* kluczowa zmiana */
+
+  padding:20px;
+  border-radius:18px;
+
+  background:linear-gradient(180deg,#0b1324,#050b18);
+  border:1px solid rgba(255,255,255,.14);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* bez ramek i cieni, tylko układ i wyrównanie
+.card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+  */
+
+.card svg{
+  height:120px;       /* stała wysokość ikon */
+  margin-bottom:12px;
+}
+
+.card h3{
+  height:44px;        /* STAŁA wysokość */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+}
+
+.card p{
+  font-size:12px;
+  color:#94a3b8;
+}
+
+svg{
+  width:100%;
+  max-width:120px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<section class="hero">
+
+  <!-- LEFT -->
+  <div>
+    <h1>Microsoft 365 Security</h1>
+    <p>
+      Zabezpiecz tożsamości, urządzenia i dane firmowe.
+      Wykrywaj zagrożenia i kontroluj środowisko w czasie rzeczywistym.
+    </p>
+
+    <a href="#" class="btn">1 klik • e‑mail</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="panel">
+    <div class="grid">
+
+      <!-- RADAR -->
+      <div class="card">
+        <svg viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="80" stroke="#334155" fill="none"/>
+          <circle cx="100" cy="100" r="50" stroke="#334155" fill="none"/>
+
+          <line x1="100" y1="100" x2="100" y2="20"
+                stroke="#22d3ee" stroke-width="2">
+            <animateTransform attributeName="transform"
+              type="rotate"
+              from="0 100 100"
+              to="360 100 100"
+              dur="3s"
+              repeatCount="indefinite"/>
+          </line>
+
+          <circle cx="130" cy="70" r="4" fill="#f43f5e">
+            <animate attributeName="r"
+              values="3;6;3"
+              dur="1.2s"
+              repeatCount="indefinite"/>
+          </circle>
+        </svg>
+
+        <h3>Wykrywanie</h3>
+        <p>Skanowanie zagrożeń w czasie rzeczywistym</p>
+      </div>
+
+            <!-- DEVICES – poprawiona wersja -->
+        <div class="card">
+        <svg viewBox="0 0 200 200">
+
+            <!-- Laptop -->
+            <rect x="40" y="60" width="80" height="50" rx="6"
+                fill="none"
+                stroke="#22d3ee"
+                stroke-width="2"/>
+
+            <rect x="35" y="110" width="90" height="8" rx="3"
+                fill="#22d3ee" opacity="0.7"/>
+
+            <!-- Phone -->
+            <rect x="120" y="50" width="30" height="60" rx="6"
+                fill="none"
+                stroke="#22d3ee"
+                stroke-width="2"/>
+
+            <circle cx="135" cy="102" r="3" fill="#22d3ee"/>
+
+            <!-- Center signal -->
+            <circle cx="100" cy="90" r="6" fill="#f43f5e">
+            <animate attributeName="r"
+                values="6;10;6"
+                dur="1.2s"
+                repeatCount="indefinite"/>
+            </circle>
+
+            <!-- Signal waves -->
+            <circle cx="100" cy="90" r="14"
+            fill="none"
+            stroke="rgba(244,63,94,.4)"
+            stroke-width="2">
+            <animate attributeName="r"
+                values="14;24;14"
+                dur="1.6s"
+                repeatCount="indefinite"/>
+            <animate attributeName="opacity"
+                values="1;0;1"
+                dur="1.6s"
+                repeatCount="indefinite"/>
+            </circle>
+
+        </svg>
+
+        <h3>Urządzenia</h3>
+        <p>
+            Wszystkie laptopy, telefony i endpointy pod stałym nadzorem
+            z centralnym zarządzaniem i wykrywaniem aktywności.
+        </p>
+        </div>
+
+      <!-- IDENTITY – corporate badge -->
+<div class="card">
+  <svg viewBox="0 0 200 200">
+
+    <!-- Badge frame -->
+    <rect x="50" y="40" width="100" height="120" rx="12"
+          fill="none"
+          stroke="#22d3ee"
+          stroke-width="2"/>
+
+    <!-- Avatar -->
+    <circle cx="100" cy="80" r="18"
+            fill="none"
+            stroke="#22d3ee"
+            stroke-width="2"/>
+
+    <!-- Body -->
+    <path d="M70 120 Q100 95 130 120"
+          fill="none"
+          stroke="#22d3ee"
+          stroke-width="2"/>
+
+    <!-- Lines (data) -->
+    <line x1="70" y1="140" x2="130" y2="140"
+          stroke="#22d3ee" opacity="0.5"/>
+    <line x1="80" y1="150" x2="120" y2="150"
+          stroke="#22d3ee" opacity="0.3"/>
+
+    <!-- RED DOT -->
+    <circle cx="135" cy="55" r="5" fill="#f43f5e">
+      <animate attributeName="r"
+        values="5;8;5"
+        dur="1.2s"
+        repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="1;0.5;1"
+        dur="1.2s"
+        repeatCount="indefinite"/>
+    </circle>
+
+  </svg>
+
+  <h3>Tożsamość</h3>
+  <p>
+    Kontrola dostępu, logowań i tożsamości użytkowników
+    z wykrywaniem podejrzanych prób i ryzyka.
+  </p>
+</div>
+<!-- MONITORING – advanced SOC -->
+<div class="card">
+  <svg viewBox="0 0 200 120">
+
+    <!-- baseline -->
+    <line x1="0" y1="60" x2="200" y2="60"
+          stroke="rgba(148,163,184,.2)"/>
+
+    <!-- waveform -->
+    <polyline
+      fill="none"
+      stroke="#22d3ee"
+      stroke-width="2"
+      stroke-linecap="round"
+      points="0,60 20,50 40,70 60,40 80,80 100,60 120,30 140,70 160,50 180,80 200,60">
+      <animate attributeName="points"
+        dur="2s"
+        repeatCount="indefinite"
+        values="
+        0,60 20,50 40,70 60,40 80,80 100,60 120,30 140,70 160,50 180,80 200,60;
+        0,60 20,70 40,40 60,80 80,50 100,60 120,70 140,40 160,80 180,50 200,60;
+        0,60 20,50 40,70 60,40 80,80 100,60 120,30 140,70 160,50 180,80 200,60"/>
+    </polyline>
+
+    <!-- vertical scan -->
+    <line x1="120" y1="0" x2="120" y2="120"
+          stroke="#22d3ee" stroke-opacity="0.3">
+      <animate attributeName="x1" values="0;200;0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;200;0" dur="3s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- RED ALERT -->
+    <circle cx="120" cy="30" r="4" fill="#f43f5e">
+      <animate attributeName="r"
+        values="4;7;4"
+        dur="1.2s"
+        repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="1;0.4;1"
+        dur="1.2s"
+        repeatCount="indefinite"/>
+    </circle>
+
+  </svg>
+
+  <h3>Monitoring</h3>
+  <p>
+    Bieżąca analiza zdarzeń i zachowań w środowisku
+    – szybkie wykrywanie anomalii i zagrożeń.
+  </p>
+</div>
+
+
+</section>
+
+</body>
+</html>
